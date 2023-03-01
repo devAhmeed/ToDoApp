@@ -1,31 +1,86 @@
 body {
-    background: #111;
+  background: #111;
+  transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
 }
 
 .card {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    background-color: #444;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: #444;
 }
 
 .none {
-    display: none;
+  display: none;
 }
 
 .btn {
-    padding: 3px;
+  padding: 3px;
 }
 
 .checked {
-    background-color: gray !important;
-    text-decoration: line-through;
+  background-color: gray !important;
+  text-decoration: line-through;
 }
-.display{
-    display: block;
+.display {
+  display: block;
 }
-@media (max-width:720px) {
-    .h111 {
-        font-size: 35px;
-    }
+
+@media (max-width: 720px) {
+  .h111 {
+    font-size: 35px;
+  }
+}
+
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #111;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
